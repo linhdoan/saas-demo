@@ -1,0 +1,36 @@
+{
+  "name": "@remkoj/optimizely-frontend",
+  "packageManager": "yarn@4.5.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20.0.0 <21.0.0"
+  },
+  "devDependencies": {
+    "@types/source-map-support": "^0.5.10",
+    "@yarnpkg/sdks": "^3.2.0",
+    "eslint": "8.57.1",
+    "source-map-support": "^0.5.21",
+    "typescript": "^5.6.3",
+    "vercel": "^37.6.3"
+  },
+  "exports": null,
+  "scripts": {
+    "dev": "yarn workspace frontend dev",
+    "build": "yarn workspace frontend build",
+    "start": "yarn workspace frontend start",
+    "lint": "yarn workspace frontend lint",
+    "graphql:watch": "yarn workspace frontend watch",
+    "graphql:codegen": "yarn workspace frontend compile",
+    "type-check": "yarn workspace frontend tsc --pretty --noEmit",
+    "update-sdks": "yarn sdks vscode",
+    "update-deps": "yarn upgrade-interactive && yarn dedupe && yarn sdks vscode",
+    "update-yarn": "yarn set version stable && yarn install && yarn sdks vscode"
+  },
+  "resolutions": {
+    "@graphql-codegen/visitor-plugin-common": "file:./packages/graphql-codegen-visitor-plugin-common-v5.4.0-patched.tgz"
+  }
+}
